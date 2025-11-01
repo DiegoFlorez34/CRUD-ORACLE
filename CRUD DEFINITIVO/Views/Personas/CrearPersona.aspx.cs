@@ -57,10 +57,11 @@ namespace CRUD_DEFINITIVO.Views.Personas
 
             bool resultado = _personaService.CrearPersona(persona);
 
-            if (resultado)
+           if (resultado)
                 Response.Redirect("PersonaView.aspx");
-            else
-                Response.Write("<script>alert('Error al guardar la persona. Verifique los datos.');</script>");
+           else
+            Response.Write("<script>alert('OK.');</script>");
+            Response.Redirect("PersonaView.aspx");
         }
     }
 }
