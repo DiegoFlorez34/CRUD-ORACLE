@@ -20,6 +20,7 @@
             <Columns>
                 <asp:BoundField DataField="PersonaId" HeaderText="ID" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                <asp:BoundField DataField="Fecha_Nacimiento" HeaderText="Fecha de nacimiento" />
                 <asp:BoundField DataField="Edad" HeaderText="Edad" />
                 <asp:BoundField DataField="Correo" HeaderText="Correo" />
                 <asp:BoundField DataField="TipoPersonaNombre" HeaderText="Tipo Persona" />

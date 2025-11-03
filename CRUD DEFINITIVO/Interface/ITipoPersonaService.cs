@@ -16,7 +16,7 @@ namespace CRUD_DEFINITIVO.Interface
 
         bool ActualizarTipoPersonas(TipoPersona tipoPersona);
 
-        bool EliminarTipoPersonas(int id);
+        string EliminarTipoPersonas(int id);
 
     }
 }

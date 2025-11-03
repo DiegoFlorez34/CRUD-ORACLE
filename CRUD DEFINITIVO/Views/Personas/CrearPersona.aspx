@@ -16,10 +16,13 @@
             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
-        <div class="mb-3">
-            <label>Edad:</label>
-            <asp:TextBox ID="txtEdad" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+         <div class="mb-3">
+            <label>Fecha Nacimiento:</label>
+            <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
         </div>
+
+ 
+
 
         <div class="mb-3">
             <label>Correo:</label>

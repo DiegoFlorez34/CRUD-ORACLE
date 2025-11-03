@@ -59,7 +59,7 @@ namespace CRUD_DEFINITIVO.Views.Personas
             {
                 hfPersonaId.Value = persona.PersonaId.ToString();
                 txtNombre.Text = persona.Nombre;
-                txtEdad.Text = persona.Edad.ToString();
+                txtFechaNacimiento.Text = persona.Fecha_Nacimiento.ToString("yyyy-MM-dd");
                 txtCorreo.Text = persona.Correo;
                 txtNumeroDocumento.Text = persona.NumeroDocumento;
                 ddlTipoPersona.SelectedValue = persona.TipoPersonaId.ToString();
@@ -74,7 +74,7 @@ namespace CRUD_DEFINITIVO.Views.Personas
             {
                 PersonaId = Convert.ToInt32(hfPersonaId.Value),
                 Nombre = txtNombre.Text,
-                Edad = Convert.ToInt32(txtEdad.Text),
+                Fecha_Nacimiento = Convert.ToDateTime(txtFechaNacimiento.Text),
                 Correo = txtCorreo.Text,
                 NumeroDocumento = txtNumeroDocumento.Text,
                 TipoPersonaId = Convert.ToInt32(ddlTipoPersona.SelectedValue),

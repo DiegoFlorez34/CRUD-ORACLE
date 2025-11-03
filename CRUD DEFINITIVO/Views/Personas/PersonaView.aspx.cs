@@ -45,7 +45,9 @@ namespace CRUD_DEFINITIVO.Views.Personas
         {
             int personaId = Convert.ToInt32(gvPersonas.DataKeys[e.RowIndex].Value);
             _personaService.EliminarPersona(personaId);
+
             CargarPersonas();
         }
+
     }
 }

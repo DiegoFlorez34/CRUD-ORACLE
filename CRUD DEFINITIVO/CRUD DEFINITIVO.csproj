@@ -149,6 +149,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Data\PL\VIEW_PERSONA.txt" />
+    <Content Include="Data\PL\TRG_AUDITORIA_TIPODOCUMENTO.txt" />
+    <Content Include="Data\PL\TRIGGER TRG_AUDITORIA_PERSONA.txt" />
+    <Content Include="Data\PL\TRIGGER TRG_AUDITORIA_TIPOPERSONA.txt" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -232,7 +236,7 @@
     <Compile Include="Data\DAO\PersonaDAO.cs" />
     <Compile Include="Data\DAO\TipoDocumentoDAO.cs" />
     <Compile Include="Data\DAO\TipoPersonaDAO.cs" />
-    <Compile Include="Data\PL\PLS PERSONA.cs" />
+    <Content Include="Data\PL\PLS PERSONA.txt" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

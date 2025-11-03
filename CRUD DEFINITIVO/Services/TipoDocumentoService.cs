@@ -32,7 +32,7 @@ namespace CRUD_DEFINITIVO.Services
         {
             return _tipoDocumentoDAO.ActualizarTipoDocumento(tipoDocumento);
         }
-        public bool EliminarTipoDocumento(int id)
+        public string EliminarTipoDocumento(int id)
         {
             return _tipoDocumentoDAO.EliminarTipoDocumento(id);
         }

@@ -15,7 +15,7 @@ namespace CRUD_DEFINITIVO.Interface
          List<TipoDocumento> ObtenerTipoDocumentos();
         bool ActualizarTipoDocumento(TipoDocumento tipoDocumento);
 
-         bool EliminarTipoDocumento(int id);
+         string EliminarTipoDocumento(int id);
 
 
     }

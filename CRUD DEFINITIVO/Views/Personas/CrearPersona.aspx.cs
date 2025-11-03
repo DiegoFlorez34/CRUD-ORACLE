@@ -48,7 +48,7 @@ namespace CRUD_DEFINITIVO.Views.Personas
             Persona persona = new Persona
             {
                 Nombre = txtNombre.Text,
-                Edad = Convert.ToInt32(txtEdad.Text),
+                Fecha_Nacimiento = Convert.ToDateTime(txtFechaNacimiento.Text),
                 Correo = txtCorreo.Text,
                 NumeroDocumento = txtNumeroDocumento.Text,
                 TipoPersonaId = Convert.ToInt32(ddlTipoPersona.SelectedValue),

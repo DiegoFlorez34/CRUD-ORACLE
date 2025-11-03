@@ -21,7 +21,7 @@ namespace CRUD_DEFINITIVO.Data.DAO
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("P_NOMBRE", OracleDbType.Varchar2).Value = persona.Nombre;
-                    cmd.Parameters.Add("P_EDAD", OracleDbType.Int32).Value = persona.Edad;
+                    cmd.Parameters.Add("P_FECHA_NACIMIENTO", OracleDbType.Date).Value = persona.Fecha_Nacimiento;
                     cmd.Parameters.Add("P_CORREO", OracleDbType.Varchar2).Value = persona.Correo;
                     cmd.Parameters.Add("P_TIPOPERSONAID", OracleDbType.Int32).Value = persona.TipoPersonaId;
                     cmd.Parameters.Add("P_TIPODOCUMENTOID", OracleDbType.Int32).Value = persona.TipoDocumentoId;
@@ -55,18 +55,15 @@ namespace CRUD_DEFINITIVO.Data.DAO
             using (OracleConnection conn = ConexionOracle.ObtenerConexion())
             {
 
-                string sql = @"SELECT P.PERSONAID,
-                                          P.NOMBRE,
-                                          P.EDAD,
-                                          P.CORREO,
-                                          P.TIPOPERSONAID,
-                                          TP.DESCRIPCION AS TIPO_PERSONA_NOMBRE,
-                                          P.TIPODOCUMENTOID,
-                                          TD.DESCRIPCION AS TIPO_DOCUMENTO_NOMBRE,
-                                          P.NUMERODOCUMENTO
-                                    FROM PERSONA P
-                                    JOIN TIPOPERSONA TP ON P.TIPOPERSONAID = TP.TIPOPERSONAID
-                                    JOIN TIPODOCUMENTO TD ON P.TIPODOCUMENTOID = TD.TIPODOCUMENTOID";
+                string sql = @"SELECT PERSONAID,
+                                          NOMBRE,
+                                          FECHA_NACIMIENTO,
+                                          EDAD,
+                                          CORREO,
+                                          TIPO_PERSONA,
+                                          TIPO_DOCUMENTO,
+                                          NUMERODOCUMENTO
+                                    FROM VIEW_PERSONA";
                 using (OracleCommand cmd = new OracleCommand(sql, conn))
                 {
 
@@ -80,14 +77,13 @@ namespace CRUD_DEFINITIVO.Data.DAO
                             {
                                 PersonaId = Convert.ToInt32(dr["PERSONAID"]),
                                 Nombre = dr["NOMBRE"].ToString(),
+                                Fecha_Nacimiento = Convert.ToDateTime(dr["FECHA_NACIMIENTO"]),
                                 Edad = Convert.ToInt32(dr["EDAD"]),
                                 Correo = dr["CORREO"].ToString(),
-                                TipoPersonaId = Convert.ToInt32(dr["TIPOPERSONAID"]),
-                                TipoPersonaNombre = dr["TIPO_PERSONA_NOMBRE"].ToString(),
-                                TipoDocumentoId = Convert.ToInt32(dr["TIPODOCUMENTOID"]),
-                                TipoDocumentoNombre = dr["TIPO_DOCUMENTO_NOMBRE"].ToString(),
-                                NumeroDocumento = dr["NUMERODOCUMENTO"].ToString(),
-                            });
+                                TipoPersonaNombre = dr["TIPO_PERSONA"].ToString(),
+                                TipoDocumentoNombre = dr["TIPO_DOCUMENTO"].ToString(),
+                                NumeroDocumento = dr["NUMERODOCUMENTO"].ToString()
+                            }); 
                         }
                     }
 
@@ -105,7 +101,7 @@ namespace CRUD_DEFINITIVO.Data.DAO
 
                     cmd.Parameters.Add("P_PERSONAID", OracleDbType.Int32).Value = persona.PersonaId;
                     cmd.Parameters.Add("P_NOMBRE", OracleDbType.Varchar2).Value = persona.Nombre;
-                    cmd.Parameters.Add("P_EDAD", OracleDbType.Int32).Value = persona.Edad;
+                    cmd.Parameters.Add("P_FECHA_NACIMIENTO", OracleDbType.Date).Value = persona.Fecha_Nacimiento;
                     cmd.Parameters.Add("P_CORREO", OracleDbType.Varchar2).Value = persona.Correo;
                     cmd.Parameters.Add("P_TIPOPERSONAID", OracleDbType.Int32).Value = persona.TipoPersonaId;
                     cmd.Parameters.Add("P_TIPODOCUMENTOID", OracleDbType.Int32).Value = persona.TipoDocumentoId;

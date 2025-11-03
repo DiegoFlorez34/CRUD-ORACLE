@@ -43,8 +43,16 @@ namespace CRUD_DEFINITIVO.Views.TipoPersonas
         protected void gvTipoPersonas_RowDeleting(object sender, System.Web.UI.WebControls.GridViewDeleteEventArgs e)
         {
             int tipoPersonaId = Convert.ToInt32(gvTipoPersonas.DataKeys[e.RowIndex].Value);
-            _tipoPersonaService.EliminarTipoPersonas(tipoPersonaId);
-            CargarTipoPersonas();
+            string resultado =_tipoPersonaService.EliminarTipoPersonas(tipoPersonaId);
+            if (resultado =="OK")
+            {
+                CargarTipoPersonas();
+            }
+            else
+            {
+                Response.Write($"<script>alert('{resultado}');</script>");
+            }
+           
         }
     }
 }

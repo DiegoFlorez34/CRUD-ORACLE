@@ -32,7 +32,7 @@ namespace CRUD_DEFINITIVO.Services
         {
             return _tipoPersonaDAO.ActualizarTipoPersona(tipoPersona);
         }
-        public bool EliminarTipoPersonas(int id)
+        public string EliminarTipoPersonas(int id)
         {
             return _tipoPersonaDAO.EliminarTipoPersona(id);
         }

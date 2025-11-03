@@ -43,8 +43,17 @@ namespace CRUD_DEFINITIVO.Views.TipoDocumentos
         protected void gvTipoDocumentos_RowDeleting(object sender, System.Web.UI.WebControls.GridViewDeleteEventArgs e)
         {
             int tipoDocumentoId = Convert.ToInt32(gvTipoDocumentos.DataKeys[e.RowIndex].Value);
-            _tipoDocumentoService.EliminarTipoDocumento(tipoDocumentoId);
-            CargarTipoDocumentos();
+
+            string  resultado= _tipoDocumentoService.EliminarTipoDocumento(tipoDocumentoId);
+            if (resultado=="OK")
+            {
+                CargarTipoDocumentos();
+            }
+            else
+            {
+                Response.Write($"<script>alert('{resultado}');</script>");
+            }
+
         }
     }
 }

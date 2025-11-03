@@ -68,17 +68,34 @@ namespace CRUD_DEFINITIVO.Data.DAO
 
             }
         }
-        public bool EliminarTipoPersona(int id)
+        public string EliminarTipoPersona(int id)
         {
             using (OracleConnection conn = ConexionOracle.ObtenerConexion())
             {
-                string sql = "DELETE FROM TIPOPERSONA WHERE TIPOPERSONAID = :id";
-                using (OracleCommand cmd = new OracleCommand(sql, conn))
+                try
                 {
-                    cmd.Parameters.Add(":id", id);
-                    conn.Open();
-                    return cmd.ExecuteNonQuery() > 0;
+                    string sql = "DELETE FROM TIPOPERSONA WHERE TIPOPERSONAID = :id";
+                    using (OracleCommand cmd = new OracleCommand(sql, conn))
+                    {
+                        cmd.Parameters.Add(":id", id);
+                        conn.Open();
+                         cmd.ExecuteNonQuery() ;
+                        return "OK";
+                    }
                 }
+                catch (OracleException ex)
+                {
+                    if (ex.Number == 2292)
+                    {
+                        return "No se puede eliminar existen registros asociados a este tipo de persona";
+                    }
+                    else
+                    {
+                        return "Error inesperado: " + ex.Message;
+                    }
+
+                }
+
             }
         }
 
