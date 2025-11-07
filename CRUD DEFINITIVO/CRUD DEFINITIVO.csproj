@@ -149,6 +149,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Data\PL\FUNCION CALCULO EDAD.txt" />
     <Content Include="Data\PL\VIEW_PERSONA.txt" />
     <Content Include="Data\PL\TRG_AUDITORIA_TIPODOCUMENTO.txt" />
     <Content Include="Data\PL\TRIGGER TRG_AUDITORIA_PERSONA.txt" />
@@ -202,6 +203,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Login\Login.aspx" />
     <Content Include="Views\Personas\CrearPersona.aspx" />
     <Content Include="Views\Personas\EditarPersona.aspx" />
     <Content Include="Views\Personas\PersonaView.aspx" />
@@ -277,6 +279,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Personas\CrearPersona.aspx.cs">
       <DependentUpon>CrearPersona.aspx</DependentUpon>
