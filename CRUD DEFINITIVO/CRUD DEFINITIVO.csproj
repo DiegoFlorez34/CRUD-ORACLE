@@ -150,6 +150,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Data\PL\FUNCION CALCULO EDAD.txt" />
+    <Content Include="Data\PL\PLLOGIN.txt" />
     <Content Include="Data\PL\VIEW_PERSONA.txt" />
     <Content Include="Data\PL\TRG_AUDITORIA_TIPODOCUMENTO.txt" />
     <Content Include="Data\PL\TRIGGER TRG_AUDITORIA_PERSONA.txt" />
@@ -239,6 +240,7 @@
     <Compile Include="Data\DAO\TipoDocumentoDAO.cs" />
     <Compile Include="Data\DAO\TipoPersonaDAO.cs" />
     <Content Include="Data\PL\PLS PERSONA.txt" />
+    <Compile Include="Data\DAO\UsuarioDAO.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,13 +254,16 @@
     <Compile Include="Interface\IPersonaService.cs" />
     <Compile Include="Interface\ITipoDocumentoService.cs" />
     <Compile Include="Interface\ITipoPersonaService.cs" />
+    <Compile Include="Interface\IUsuarioService.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\TipoDocumento.cs" />
     <Compile Include="Models\TipoPersona.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PersonaService.cs" />
     <Compile Include="Services\TipoDocumentoService.cs" />
     <Compile Include="Services\TipoPersonaService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

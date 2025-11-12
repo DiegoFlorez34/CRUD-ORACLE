@@ -25,6 +25,13 @@ namespace CRUD_DEFINITIVO.Views.Personas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("../Login/Login.aspx");
+                return;
+            }
+
+
             if (!IsPostBack)
             {
                 CargarCombos();

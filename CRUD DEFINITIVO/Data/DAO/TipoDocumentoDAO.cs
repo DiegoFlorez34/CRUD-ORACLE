@@ -86,14 +86,7 @@ namespace CRUD_DEFINITIVO.Data.DAO
                 }
                 catch (OracleException ex)
                 {
-                    if (ex.Number == 2292)
-                    {
-                        return "No se puede eliminar existen registros asociados a este tipo de documento";
-                    }
-                    else
-                    {
                         return "Error inesperado: " + ex.Message;
-                    }
 
                 }
                

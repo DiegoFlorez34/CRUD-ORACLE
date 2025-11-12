@@ -21,7 +21,11 @@ namespace CRUD_DEFINITIVO.Views.TipoDocumentos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("../Login/Login.aspx");
+                return;
+            }
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {

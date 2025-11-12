@@ -58,7 +58,13 @@
                         <li><a runat="server" href="~/Views/TipoDocumentos/TipoDocumentoViews">TIPO DOCUMENTO</a></li>
                         <li><a runat="server" href="~/Views/TipoPersonas/TipoPersonaView">TIPO PERSONA</a></li>
                     </ul>
+                     
                 </div>
+                <div class="ms-auto">
+                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
+                                    CssClass="btn btn-danger btn-sm"
+                                    OnClick="btnCerrarSesion_Click" />
+                    </div>
             </div>
         </div>
         <div class="container body-content">
